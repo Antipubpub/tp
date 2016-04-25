@@ -32,12 +32,12 @@
 			<version>2.2.2</version>
 			<scope>runtime</scope>
 		</dependency>
-<!-- 		<dependency> -->
-<!-- 			<groupId>org.apache.maven.plugins</groupId> -->
-<!-- 			<artifactId>maven-war-plugin</artifactId> -->
-<!-- 			<version>2.6</version> -->
-<!-- 			<type>maven-plugin</type> -->
-<!-- 		</dependency> -->
+		<!-- <dependency> -->
+		<!-- <groupId>org.apache.maven.plugins</groupId> -->
+		<!-- <artifactId>maven-war-plugin</artifactId> -->
+		<!-- <version>2.6</version> -->
+		<!-- <type>maven-plugin</type> -->
+		<!-- </dependency> -->
 		<dependency>
 			<groupId>javax.servlet</groupId>
 			<artifactId>javax.servlet-api</artifactId>
@@ -49,46 +49,50 @@
 		<plugins>
 
 
-<!-- 			<plugin> -->
-<!-- 				<groupId>org.apache.maven.plugins</groupId> -->
-<!-- 				<artifactId>maven-war-plugin</artifactId> -->
-<!-- 				<version>2.6</version> -->
-<!-- 				<configuration> -->
-<!-- 					<warName>projet</warName> -->
-<!-- 					<outputDirectory>/Users/reitheti/dev/apache-tomcat-8.0.32/webapps</outputDirectory> -->
-<!-- 					<failOnMissingWebXml>false</failOnMissingWebXml> -->
-<!-- 				</configuration> -->
-<!-- 			</plugin> -->
-
 			<plugin>
-				<groupId>com.heroku.sdk</groupId>
-				<artifactId>heroku-maven-plugin</artifactId>
-				<version>1.0.0</version>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-war-plugin</artifactId>
+				<version>2.6</version>
+				<configuration>
+					<warName>projet</warName>
+					<!-- <outputDirectory>/Users/reitheti/dev/apache-tomcat-8.0.32/webapps</outputDirectory> -->
+					<failOnMissingWebXml>false</failOnMissingWebXml>
+				</configuration>
 			</plugin>
 
 			<!-- <plugin> -->
-			<!-- <groupId>org.apache.maven.plugins</groupId> -->
-			<!-- <artifactId>maven-dependency-plugin</artifactId> -->
-			<!-- <version>2.3</version> -->
-			<!-- <executions> -->
-			<!-- <execution> -->
-			<!-- <phase>package</phase> -->
-			<!-- <goals> -->
-			<!-- <goal>copy</goal> -->
-			<!-- </goals> -->
+			<!-- <groupId>com.heroku.sdk</groupId> -->
+			<!-- <artifactId>heroku-maven-plugin</artifactId> -->
+			<!-- <version>1.0.0</version> -->
 			<!-- <configuration> -->
-			<!-- <artifactItems> -->
-			<!-- <artifactItem> -->
-			<!-- <groupId>org.eclipse.jetty</groupId> -->
-			<!-- <artifactId>jetty-runner</artifactId> -->
-			<!-- <version>9.2.7.v20150116</version> -->
-			<!-- <destFileName>jetty-runner.jar</destFileName> -->
-			<!-- </artifactItem> -->
-			<!-- </artifactItems> -->
+			<!-- <warName>projet</warName> -->
+			<!-- <failOnMissingWebXml>false</failOnMissingWebXml> -->
 			<!-- </configuration> -->
-			<!-- </execution> -->
-			<!-- </executions> -->
 			<!-- </plugin> -->
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-dependency-plugin</artifactId>
+				<version>2.3</version>
+				<executions>
+					<execution>
+						<phase>package</phase>
+						<goals>
+							<goal>copy</goal>
+						</goals>
+						<configuration>
+							<artifactItems>
+								<artifactItem>
+									<groupId>org.eclipse.jetty</groupId>
+									<artifactId>jetty-runner</artifactId>
+									<version>9.2.7.v20150116</version>
+									<destFileName>jetty-runner.jar</destFileName>
+								</artifactItem>
+							</artifactItems>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
 
 			<!-- <plugin> -->
 			<!-- <groupId>org.apache.maven.plugins</groupId> -->
