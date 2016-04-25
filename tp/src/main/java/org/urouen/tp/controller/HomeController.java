@@ -10,6 +10,12 @@ public class HomeController {
 	
 	private static final String HELLO_WORLD_MSG = "hello world!";
 	
+	@RequestMapping(value="/", method=RequestMethod.GET)
+	@ResponseBody
+	public String index() {
+		return "Welcome page!";
+	}
+	
 	@RequestMapping(value="/about", method=RequestMethod.GET)
 	@ResponseBody
 	public String about() {
