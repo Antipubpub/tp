@@ -16,6 +16,12 @@ public class HomeController {
 		return "Welcome page!";
 	}
 	
+	@RequestMapping(value="/test", method=RequestMethod.GET)
+	@ResponseBody
+	public String test() {
+		return "Test!";
+	}
+	
 	@RequestMapping(value="/about", method=RequestMethod.GET)
 	@ResponseBody
 	public String about() {
